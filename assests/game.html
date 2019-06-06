@@ -6,33 +6,34 @@
 </head>
 
 <body>
+    <div style="text-align: center">
+        <h1>Master Crystal</h1>
+        <h3>My Realm, My Rules!</h3>
 
-    <h1>Master Crystal</h1>
-    <h3>My Realm, My Rules!</h3>
+        <ul style="list-style-type:none">
+            <li>I will show you a number.</li>
+            <li>I will give you four crystals.</li>
+            <li>The crystals have random values.</li>
+            <li>Click on the crystals if you dare.</li>
+            <li>Can you match my number without going over?</li>
+        </ul>
 
-    <ul style="list-style-type:none">
-        <li>I will show you a number.</li>
-        <li>I will give you four crystals.</li>
-        <li>The crystals have random values.</li>
-        <li>Click on the crystals if you dare.</li>
-        <li>Can you match my number without going over?</li>
-    </ul>
+        <h3>Many have tried, few overcome the Master Crystal!</h3>
 
-    <h3>Many have tried, few overcome the Master Crystal!</h3>
+        <button id="gameStart">Challenge Me!</button>
 
-    <button id="gameStart">Challenge Me!</button>
+        <p>Master Crystal Number: <span id="gameNum"></span></p>
 
-    <p>Master Crystal Number: <span id="gameNum"></span></p>
+        <p>Your Score: <span id="playerScore"></span></p>
 
-    <p>Your Score: <span id="playerScore"></span></p>
-
-    <div>
-        <span>
-            <button class="crystal" data-index="0">Crystal 1</button>
-            <button class="crystal" data-index="1">Crystal 2</button>
-            <button class="crystal" data-index="2">Crystal 3</button>
-            <button class="crystal" data-index="3">Crystal 4</button>
-        </span>
+        <div>
+            <span>
+                <button class="crystal" data-index="0">Crystal 1</button>
+                <button class="crystal" data-index="1">Crystal 2</button>
+                <button class="crystal" data-index="2">Crystal 3</button>
+                <button class="crystal" data-index="3">Crystal 4</button>
+            </span>
+        </div>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -66,17 +67,17 @@
         $('.crystal').on('click', function addScore() {
             console.log($(this).data('index'));
             if (!isGameEnded) {
-               score += crystalRandomNum[$(this).data('index')] 
+                score += crystalRandomNum[$(this).data('index')]
             }
-            
+
 
             if (score > gameRandomNum) {
-                alert ("You Lost!");
+                alert("You Lost!");
                 isGameEnded = true;
             } else if (score == gameRandomNum) {
-                alert ("You Win!");
+                alert("You Win!");
                 isGameEnded = true;
-            }else{
+            } else {
 
             }
 
